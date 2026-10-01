@@ -627,6 +627,108 @@ html.js .bar:not(.show) { visibility: hidden; opacity: 0; pointer-events: none; 
   .qa summary .ico, .jump a { transition: none; }
 }
 .how .flow-4 .flow-step { align-content: start; }
+
+/* ==========================================================================
+   Our Work page
+   ========================================================================== */
+.pj-wrap { padding-block: 24px 40px; }
+.pj { display: grid; gap: 28px; padding-block: 56px; }
+.pj + .pj { border-top: 1px solid var(--line); }
+.pj > * { min-width: 0; }
+.pj-info { display: grid; gap: 16px; justify-items: start; align-content: start; }
+.pj-where { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 14px; border-radius: 999px; background: var(--wash); font-weight: 600; font-size: 0.9375rem; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); }
+.pj h2 { font-size: clamp(2.125rem, 8vw, 3.25rem); }
+.pj-lead { font-size: 1.125rem; color: var(--muted); max-width: 38ch; }
+.pj-facts { display: grid; width: 100%; max-width: 420px; margin: 4px 0 6px; }
+.pj-facts div { display: flex; justify-content: space-between; gap: 20px; padding-block: 12px; border-top: 1px solid var(--line); }
+.pj-facts div:last-child { border-bottom: 1px solid var(--line); }
+.pj-facts dt { color: var(--muted); }
+.pj-facts dd { margin: 0; font-weight: 600; text-align: right; }
+
+.gallery { display: grid; gap: 14px; }
+.g-track { position: relative; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border-radius: 22px; }
+.g-track::-webkit-scrollbar { display: none; }
+.g-slide { flex: 0 0 90%; margin: 0; scroll-snap-align: center; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 22px; background: var(--wash); }
+.g-slide img { width: 100%; height: 100%; object-fit: cover; object-position: var(--x, 50%) var(--y, 50%); scale: var(--s, 1); transform-origin: var(--x, 50%) var(--y, 50%); }
+.g-ui { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.g-count { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--muted); }
+.g-count span { color: var(--ink); }
+.g-btns { display: flex; gap: 10px; }
+.g-btn { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; transition: background-color 0.2s, color 0.2s, opacity 0.2s; }
+.g-btn:hover:not(:disabled) { background: var(--ink); color: #fff; }
+.g-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* ==========================================================================
+   Contact page
+   ========================================================================== */
+.ct { padding-block: 56px 88px; }
+.ct-grid { display: grid; gap: 40px; }
+.ct-grid > * { min-width: 0; }
+.ct-ways { display: grid; gap: 32px; align-content: start; }
+.ct-call { display: grid; gap: 8px; justify-items: start; }
+.ct-call h2, .ct-text h3 { font-size: clamp(2.125rem, 8vw, 3rem); }
+.ct-number { font: 500 clamp(2.5rem, 11vw, 3.75rem)/1.05 var(--font-display); letter-spacing: -0.03em; text-decoration-line: underline; text-decoration-color: var(--coral); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+.ct-number:hover { text-decoration-color: currentColor; }
+.ct-call p, .ct-text p { color: var(--muted); }
+.ct-text { display: grid; gap: 10px; justify-items: start; padding-top: 28px; border-top: 1px solid var(--line); }
+.ct-text h3 { font: 500 1.75rem/1.15 var(--font-display); letter-spacing: -0.02em; }
+.ct-facts { display: grid; }
+.ct-facts div { display: grid; grid-template-columns: 90px 1fr; gap: 16px; padding-block: 12px; border-top: 1px solid var(--line); }
+.ct-facts div:last-child { border-bottom: 1px solid var(--line); }
+.ct-facts dt { color: var(--muted); }
+.ct-facts dd { margin: 0; font-weight: 500; }
+
+.ct-form { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px 22px; box-shadow: 0 26px 50px -36px rgba(33, 46, 39, 0.45); }
+.quote { display: grid; gap: 22px; }
+.quote h2, .quote-done h2 { font-size: clamp(1.875rem, 7vw, 2.5rem); }
+.quote-intro { color: var(--muted); margin-top: -12px; }
+.field { display: grid; gap: 8px; }
+.field label { font-weight: 600; }
+.hint { color: var(--muted); font-size: 0.9375rem; margin-top: -4px; }
+.field input, .field textarea {
+  width: 100%; min-height: 56px; padding: 14px 16px; border: 1.5px solid #80857a; border-radius: 14px; background: #fff; color: var(--ink);
+  font: inherit; font-size: 1.0625rem; line-height: 1.4;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; border-color: var(--ink); }
+.field input::selection, .field textarea::selection { background: var(--ink); color: #fff; }
+.field [aria-invalid="true"] { border-color: var(--coral-press); border-width: 2px; }
+.err { display: flex; align-items: flex-start; gap: 8px; color: var(--coral-press); font-weight: 600; font-size: 0.9375rem; }
+.err[hidden] { display: none; }
+.err .ico { width: 18px; height: 18px; margin-top: 2px; }
+.quote .btn { width: 100%; }
+.quote-alt { color: var(--muted); text-align: center; font-size: 0.9375rem; }
+.quote-alt a { font-weight: 600; color: var(--ink); text-decoration-color: var(--coral); text-decoration-thickness: 2px; text-underline-offset: 0.22em; }
+.quote-done { display: grid; gap: 16px; justify-items: start; }
+.quote-done[hidden] { display: none; }
+.quote-done:focus { outline: none; }
+.quote-done p { color: var(--muted); }
+.quote-done-btns { display: grid; gap: 10px; width: 100%; }
+.textlink-btn { background: none; border: 0; padding: 8px 0; font: inherit; font-weight: 600; cursor: pointer; text-decoration: underline; text-decoration-color: var(--coral); text-decoration-thickness: 2px; text-underline-offset: 0.22em; color: var(--ink); }
+
+@media (min-width: 600px) {
+  .g-slide { flex-basis: 82%; }
+  .quote-done-btns { display: flex; flex-wrap: wrap; }
+  .ct-form { padding: 36px 32px; }
+}
+
+@media (min-width: 900px) {
+  .pj-wrap { padding-block: 32px 56px; }
+  .pj { grid-template-columns: 4fr 8fr; gap: 72px; padding-block: 96px; align-items: start; }
+  .g-slide { flex-basis: 100%; }
+
+  .ct { padding-block: 88px 120px; }
+  .ct-grid { grid-template-columns: 5fr 6fr; gap: 88px; align-items: start; }
+  .ct-form { padding: 44px 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .g-btn { transition: none; }
+}
+
+@media (min-width: 900px) {
+  .closing-copy .closing-btns { flex-direction: row; justify-self: start; max-width: none; width: auto; }
+}
 </style>
 
   <script>
@@ -1015,6 +1117,85 @@ html.js .bar:not(.show) { visibility: hidden; opacity: 0; pointer-events: none; 
         var step = (card ? card.getBoundingClientRect().width + 14 : 320) * (parseInt(btn.getAttribute('data-dir'), 10) || 1);
         rail.scrollBy({ left: step, behavior: reduceMotion ? 'auto' : 'smooth' });
       });
+    });
+  }
+
+
+  /* ---------- Project galleries (Our Work): swipe, or use the buttons ---------- */
+  $$('[data-gallery]').forEach(function (g) {
+    var track = $('.g-track', g);
+    var prev = $('[data-g-prev]', g);
+    var next = $('[data-g-next]', g);
+    var now = $('[data-g-now]', g);
+    var slides = $$('.g-slide', track);
+    if (!track || !slides.length) return;
+    function index() {
+      var best = 0, dist = Infinity, mid = track.scrollLeft + track.clientWidth / 2;
+      if (track.scrollLeft <= 2) return 0;
+      if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) return slides.length - 1;
+      slides.forEach(function (s, i) {
+        var d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - mid);
+        if (d < dist) { dist = d; best = i; }
+      });
+      return best;
+    }
+    function update() {
+      var i = index();
+      now.textContent = i + 1;
+      prev.disabled = i === 0;
+      next.disabled = i === slides.length - 1;
+    }
+    function go(step) {
+      var i = Math.max(0, Math.min(slides.length - 1, index() + step));
+      var s = slides[i];
+      track.scrollTo({ left: s.offsetLeft - (track.clientWidth - s.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    var tick = 0;
+    track.addEventListener('scroll', function () {
+      if (tick) return;
+      tick = requestAnimationFrame(function () { tick = 0; update(); });
+    }, { passive: true });
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    window.addEventListener('resize', update);
+    update();
+  });
+
+  /* ---------- Quote form (Contact): front-end demo only, nothing is sent ---------- */
+  var quote = $('#quote');
+  if (quote) {
+    var done = $('#quote-done');
+    var fields = [
+      { el: $('#q-name'), err: $('#q-name-err'), ok: function (v) { return v.trim().length > 1; } },
+      { el: $('#q-phone'), err: $('#q-phone-err'), ok: function (v) { return v.replace(/\D/g, '').length >= 7; } }
+    ];
+    function check(f) {
+      var good = f.ok(f.el.value);
+      f.err.hidden = good;
+      if (good) f.el.removeAttribute('aria-invalid'); else f.el.setAttribute('aria-invalid', 'true');
+      return good;
+    }
+    fields.forEach(function (f) {
+      f.el.addEventListener('blur', function () { if (f.el.value) check(f); });
+      f.el.addEventListener('input', function () { if (f.el.getAttribute('aria-invalid')) check(f); });
+    });
+    quote.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var firstBad = null;
+      fields.forEach(function (f) { if (!check(f) && !firstBad) firstBad = f.el; });
+      if (firstBad) { firstBad.focus(); return; }
+      var first = fields[0].el.value.trim().split(/\s+/)[0];
+      done.querySelector('h2').textContent = 'Thanks, ' + first + '.';
+      quote.hidden = true;
+      done.hidden = false;
+      done.focus();
+    });
+    $('#quote-reset').addEventListener('click', function () {
+      quote.reset();
+      fields.forEach(function (f) { f.err.hidden = true; f.el.removeAttribute('aria-invalid'); });
+      done.hidden = true;
+      quote.hidden = false;
+      fields[0].el.focus();
     });
   }
 
