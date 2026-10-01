@@ -467,7 +467,7 @@ html.js .bar:not(.show) { visibility: hidden; opacity: 0; pointer-events: none; 
 .closing-map { display: grid; gap: 14px; align-content: start; }
 .map-slot { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 11; width: 100%; border-radius: 20px; background: #ece6d6; text-decoration: none; box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.6); }
 .map-art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; transition: scale 0.9s var(--ease-out); }
-@media (hover: hover) { .map-slot:hover .map-art { scale: 1.04; } .map-slot:hover .map-open { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9375rem; padding: 12px 20px; border-radius: 999px; background: #fff; color: var(--ink); box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5); transition: background-color 0.2s, color 0.2s; }
+@media (hover: hover) { .map-slot:hover .map-art { scale: 1.04; } .map-slot:hover .map-open { background: var(--coral); color: #fff; } }
 .map-open { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9375rem; padding: 12px 20px; border-radius: 999px; background: #fff; color: var(--ink); box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5); transition: background-color 0.2s, color 0.2s; }
 .map-open .ico { width: 16px; height: 16px; }
 .areas-big { display: flex; flex-wrap: wrap; gap: 10px 14px; }
@@ -729,6 +729,11 @@ html.js .bar:not(.show) { visibility: hidden; opacity: 0; pointer-events: none; 
 @media (min-width: 900px) {
   .closing-copy .closing-btns { flex-direction: row; justify-self: start; max-width: none; width: auto; }
 }
+
+/* Phones: zoomed photo crops must never widen the page. Without this, mobile browsers
+   shrink the whole page to fit the oversized image and the layout looks broken. */
+html, body { overflow-x: clip; max-width: 100%; }
+.svc-img, .proj-img, .sv-photo, .g-slide, .hero-media { overflow: clip; contain: paint; }
 </style>
 
   <script>
