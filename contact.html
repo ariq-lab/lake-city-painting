@@ -731,6 +731,27 @@ html.js .bar:not(.show) { visibility: hidden; opacity: 0; pointer-events: none; 
    shrink the whole page to fit the oversized image and the layout looks broken. */
 html, body { overflow-x: clip; max-width: 100%; }
 .svc-img, .proj-img, .sv-photo, .g-slide, .hero-media { overflow: clip; contain: paint; }
+
+
+/* ---------- Phones and small tablets: service and project cards ----------
+   Each card is its own boxed unit (photo, then text, then a footer line),
+   with clear space between cards, so a title always reads as part of the photo above it. */
+.proj-go { display: none; }
+@media (max-width: 899px) {
+  .svc-row { gap: 24px; }
+  .proj-grid { gap: 24px; }
+  .svc, .proj { gap: 0; background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+  .svc-img, .proj-img { border-radius: 0; margin-bottom: 0; }
+  .svc-title, .svc-line, .proj-info { padding-inline: 18px; }
+  .svc-title { padding-top: 16px; }
+  .svc-line { padding-top: 4px; }
+  .svc-price { display: block; margin-top: 16px; padding: 13px 18px 15px; border-top: 1px solid var(--line); }
+  .view-pill { display: none; }
+  .proj-info { flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 16px; padding-bottom: 16px; }
+  .proj-where { font-size: 1rem; }
+  .proj-go { display: flex; align-items: center; justify-content: space-between; padding: 13px 18px 15px; border-top: 1px solid var(--line); font-weight: 600; color: var(--ink); }
+  .proj-go .ico { width: 18px; height: 18px; }
+}
 </style>
 
   <script>
