@@ -208,6 +208,18 @@ html.has-hero body.nav-open .site-header .logo-on-dark { display: none; }
 .hero-actions { display: grid; gap: 10px; width: 100%; max-width: 440px; margin-top: 6px; }
 .hero :focus-visible, .closing :focus-visible, .showcase :focus-visible { outline-color: #fff; }
 
+/* Phones: photo on top, copy on the dark green below so nothing covers the painter */
+@media (max-width: 899px) {
+  .hero { --shot: clamp(270px, 44svh, 440px); height: auto; min-height: 100svh; align-items: start; }
+  .hero-media { inset: 0 0 auto 0; height: var(--shot); }
+  .hero-media img { object-position: 60% 50%; }
+  .hero::after {
+    inset: 0 0 auto 0; height: var(--shot);
+    background: linear-gradient(to bottom, rgba(12, 20, 15, 0.55) 0, rgba(12, 20, 15, 0) 26%, rgba(31, 43, 34, 0) 60%, #1f2b22 100%);
+  }
+  .hero-content { padding-block: calc(var(--shot) - 36px) 40px; }
+}
+
 /* ---------- Showcase: before and after, on forest ---------- */
 .showcase { background: var(--forest); color: var(--on-forest); padding-block: 88px; }
 .showcase-head { display: grid; gap: 14px; margin-bottom: 36px; }
