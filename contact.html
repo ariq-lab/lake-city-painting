@@ -413,14 +413,13 @@ html.js .bar:not(.show) { visibility: hidden; opacity: 0; pointer-events: none; 
 .svc-img { position: relative; display: block; overflow: hidden; border-radius: 20px; aspect-ratio: 4 / 3; background: var(--wash); margin-bottom: 10px; }
 .svc-img img { width: 100%; height: 100%; object-fit: cover; transition: scale 0.9s var(--ease-out); }
 .s-rooms { object-position: 50% 60%; }
-.s-ceiling { object-position: 60% 0; scale: 1.9; transform-origin: 60% 0; }
-.s-trim { object-position: 14% 62%; scale: 1.9; transform-origin: 14% 62%; }
+.s-ceiling { object-position: 58% 50%; }
+.s-trim { object-position: 74% 50%; }
 .svc-title { font: 500 clamp(1.5rem, 5.4vw, 1.875rem)/1.1 var(--font-display); letter-spacing: -0.02em; }
 .svc-line { color: var(--muted); }
 @media (hover: hover) {
   .svc:hover .s-rooms { scale: 1.05; }
-  .svc:hover .s-ceiling { scale: 2; }
-  .svc:hover .s-trim { scale: 2; }
+  .svc:hover .s-ceiling, .svc:hover .s-trim { scale: 1.05; }
   .svc:hover .svc-title { text-decoration: underline; text-decoration-color: var(--coral); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 }
 
@@ -551,8 +550,8 @@ html.js .bar:not(.show) { visibility: hidden; opacity: 0; pointer-events: none; 
 .sv-photo { overflow: hidden; border-radius: 22px; aspect-ratio: 4 / 3; background: var(--wash); }
 .sv-photo img { width: 100%; height: 100%; object-fit: cover; }
 .sv-photo .s-rooms { object-position: 50% 60%; scale: 1; }
-.sv-photo .s-ceiling { object-position: 60% 0; scale: 1.7; transform-origin: 60% 0; }
-.sv-photo .s-trim { object-position: 14% 62%; scale: 1.7; transform-origin: 14% 62%; }
+.sv-photo .s-ceiling { object-position: 50% 50%; }
+.sv-photo .s-trim { object-position: 50% 50%; }
 .sv-body { display: grid; gap: 18px; justify-items: start; align-content: center; }
 .sv h2 { font-size: clamp(2.125rem, 8vw, 3.25rem); }
 .sv-lead { font-size: 1.1875rem; color: var(--muted); max-width: 36ch; }
